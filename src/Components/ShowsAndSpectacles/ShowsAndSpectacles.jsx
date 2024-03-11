@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom"
 
 export const ShowsAndSpectacles = () => {
     return (
-        <div className="mt-8">
+        <div className="mt-8 mb-8">
             <h2 className="flex justify-start ml-10 font-black text-2xl">Shows y Espectáculos</h2>
             <div className="flex flex-row justify-around mt-4">
                 <div className="w-56 h-48 bg-contain bg-[#73026B] rounded-2xl shadow shadow-[#FAF2F2]">

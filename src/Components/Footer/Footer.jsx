@@ -5,7 +5,8 @@ import Logo from "../../assets/Imagen/Logo.jpg";
 
 export const Footer = () => {
     return (
-        <div className="bg-contain bg-[#F23535] mt-8 w-full h-14 flex flex-row justify-between">
+        <footer className="min-h-full">
+        <div className="bg-contain bg-[#F23535] mt-8 w-full h-14 flex flex-row justify-betweenv">
             <div className="h-14 flex items-center ml-5">
                 <img className="w-10 h-10" src={Logo} alt="Logo" />
             </div>
@@ -27,6 +28,7 @@ export const Footer = () => {
                 </div>
             </div>
         </div>
+        </footer>
     )
 }
 

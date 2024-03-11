@@ -21,9 +21,10 @@ export const NavBar = () => {
           <NavLink to={'/artist'}>
           <li className="text-sm">Artistas</li>
           </NavLink>
-          <li className="text-sm">Tickets</li>
+          <NavLink to={'/shows'}>
+          <li className="text-sm">Cartelera</li>
+          </NavLink>
           <li className="text-sm">Favoritos</li>
-          <li className="text-sm">Ubicación</li>
         </ul>
       </div>
     </nav>

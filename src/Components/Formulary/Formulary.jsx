@@ -20,7 +20,7 @@ export const Formulary = () => {
     };
 
     return (
-        <div className="max-w-full mx-auto p-4">
+        <div className="max-w-full mx-auto p-4 mb-8">
             <h2 className="text-2xl font-semibold mb-4 text-center">Formulario de Registro</h2>
             <form onSubmit={handleSubmit}>
                 <div className="flex flex-row justify-evenly w-full">

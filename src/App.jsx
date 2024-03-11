@@ -6,6 +6,7 @@ import { Footer } from "./Components/Footer/Footer";
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { NavBar } from "./Components/NavBar/NavBar";
 import { Artist } from "./Components/Artist/Artist";
+import { Shows } from "./Components/Shows/Shows";
 
 
 
@@ -19,8 +20,11 @@ function App() {
         <Route path="/artist/:category" element={<Artist />} />
         <Route path="/login" element={<Login />} />
         <Route path="/artist" element={<Artist />} />
+        <Route path="/shows" element={<Shows />} />
       </Routes>
+      <footer>
       <Footer />
+      </footer>
     </Router>
 
   )
