@@ -1,45 +1,48 @@
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { db } from "../../Config/firebaseConfig";
+import { db } from "../../Config/firebaseConfig.js";
+import { seedArtists } from "../Utils/SeedArtist";
+import { useParams } from "react-router-dom";
 
 
 export const Artist = () => {
+    const { category } = useParams();
+    const [artists, setArtists] = useState([]); 
 
-    const [artistas, setArtistas] = useState([]);
-
-    const getArtistasDB = ( tipo ) =>{
-      const myArtistas = tipo ? query( collection ( db, "artistas"), where("tipo", "==", tipo)) : query( collection ( db, "artistas")); //FILTRA POR TIPO
+    const getArtistDB = ( category ) =>{
+      const myArtists = category 
+      ? query( collection ( db, "artists"), where("category", "==", category)) 
+      : query( collection ( db, "artists")); //FILTRA POR TIPO
       //const myArtistas = query( collection ( db, "artistas")); MUESTRA TODOS
-        getDocs( myArtistas )
+        getDocs( myArtists )
             .then( (resp)=>{
-                const artistasList = resp.docs.map(doc =>{
-                  const artista ={
-                    id: doc.id,
-                    ...doc.data()
-                  };
-                  return artista;
-                })
-                console.log(artistasList);
-                setArtistas(artistasList);
+                const artistsList = resp.docs.map((doc) =>({ id: doc.id, ...doc.data()}));
+                setArtists(artistsList);
             })
             .catch( error => console.log(error));
     };
 
     useEffect( ()=>{ 
-      getArtistasDB("payaso")
-    },[]);
+      getArtistDB(category)
+
+      //seedArtists();
+    },[category]);
 
 
   return (
     <>  
     <h2>Artistas</h2>
-    {artistas.map((artista)=>(
-      <div key={artista.id}>      
-      <p>Nombre: {artista.name}</p>
-      <p>Tipo: {artista.tipo}</p>
-      <p>Ubicacion: {artista.ubicacion}</p>
+    {artists.map((artist)=>(
+      <div key={artist.id}>   
+      <img src={artist.urlArtist} />   
+      <p>Nombre: {artist.name}</p>
+      <p>Descripcion: {artist.description}</p>
+      <p>Precio: {artist.price}</p>
+      <p>Ubicacion: {artist.location}</p>
+      <p>Dias: {artist.days}</p>
+      <p>Horario: {artist.time}</p>
       </div>
-    ))};
+    ))}
     </>
   );
 };
