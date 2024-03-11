@@ -10,7 +10,7 @@ const artists = [
         location: "San Isidro",
         days: "Sab-Dom",
         time: "18 hs y 19:30 hs",
-        urlArtist:"../../assets/Imagen/Risas y Locuras.svg",
+        urlArtist:"https://i.imgur.com/UlGHJf0.jpeg",
         category: "Payasos"
     },
     {
@@ -21,7 +21,7 @@ const artists = [
         location: "Quilmes",
         days: "Vie-Sab-Dom",
         time: "17 hs y 19 hs",
-        urlArtist: "../../assets/Imagen/Aventuras Comicas.svg",
+        urlArtist: "https://i.imgur.com/qyRvrU2.jpeg",
         category: "Payasos"
     },
     {
@@ -32,7 +32,7 @@ const artists = [
         location: "CABA", 
         days: "Vie-Sab-Dom",
         time: "17 hs y 19 hs",
-        urlArtist: "../../assets/Imagen/Risas Festivas.svg",
+        urlArtist: "https://i.imgur.com/viu9uIP.jpeg",
         category: "Payasos"
     },
     {
@@ -43,7 +43,7 @@ const artists = [
         location: "CABA",
         days: "Sab",
         time: "18 hs y 19:30 hs",
-        urlArtist: "../../assets/Imagen/Alegria Circense.svg",
+        urlArtist: "https://i.imgur.com/i870Awg.jpeg",
         category: "Clowns"
     },
     {
@@ -54,7 +54,7 @@ const artists = [
         location: "Hurlingham",
         days: "Vie-Sab-Dom",
         time: "17 hs, 18:30 hs y 20 hs",
-        urlArtist: "../../assets/Imagen/Ruedan Clowns.svg",
+        urlArtist: "https://i.imgur.com/VolCyxI.jpeg",
         category: "Clowns"
     },
     {
@@ -65,7 +65,7 @@ const artists = [
         location: "La Matanza",
         days: "Dom",
         time: "17 hs y 19 hs",
-        urlArtist: "../../assets/Imagen/Carcajadas Clowns.svg",
+        urlArtist: "https://i.imgur.com/EUQNwUw.jpeg",
         category: "Clowns"
     },
     {
@@ -76,7 +76,7 @@ const artists = [
         location: "Tigre",
         days: "Sab-Dom",
         time: "18 hs",
-        urlArtist: "../../assets/Imagen/Ilusiones Magicas.svg",
+        urlArtist: "https://i.imgur.com/9OPSWpl.jpeg",
         category: "Magia"
     },
     {
@@ -87,7 +87,7 @@ const artists = [
         location: "Bernal",
         days: "Sab-Dom",
         time: "18:30 hs",
-        urlArtist: "../../assets/Imagen/Magia en Escena.svg",
+        urlArtist: "https://i.imgur.com/Hk00OsW.jpeg",
         category: "Magia"
     },
     {
@@ -98,7 +98,7 @@ const artists = [
         location: "CABA",
         days: "Sab-Dom",
         time: "18 hs",
-        urlArtist: "../../assets/Imagen/Encanto de la Bestia.svg",
+        urlArtist: "https://i.imgur.com/v3KF9Df.jpeg",
         category: "Teatral"
     },
     {
@@ -109,7 +109,7 @@ const artists = [
         location: "CABA",
         days: "Sab-Dom",
         time: "18 hs",
-        urlArtist:"../../assets/Imagen/Alicia Encantada.svg",
+        urlArtist:"https://i.imgur.com/HqAWmky.jpeg",
         category: "Teatral"
     },
 ];

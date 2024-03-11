@@ -3,11 +3,14 @@ import { useEffect, useState } from "react";
 import { db } from "../../Config/firebaseConfig.js";
 import { seedArtists } from "../Utils/SeedArtist";
 import { useParams } from "react-router-dom";
+import { ArtistDetailContainer } from "../ArtistDetailContainer/ArtistDetailContainer.jsx";
 
 
 export const Artist = () => {
     const { category } = useParams();
-    const [artists, setArtists] = useState([]); 
+    const [artists, setArtists] = useState([]);
+    const [tablaArtists, setTablaArtists] = useState([]);
+    const [busqueda, setBusqueda] = useState("");
 
     const getArtistDB = ( category ) =>{
       const myArtists = category 
@@ -18,8 +21,23 @@ export const Artist = () => {
             .then( (resp)=>{
                 const artistsList = resp.docs.map((doc) =>({ id: doc.id, ...doc.data()}));
                 setArtists(artistsList);
+                setTablaArtists(artistsList);
             })
             .catch( error => console.log(error));
+    };
+
+    const handleChange =( e )=>{
+      setBusqueda(e.target.value);
+      filtrar(e.target.value);
+    };
+
+    const filtrar =(terminoBusqueda) =>{
+      var resultado = tablaArtists.filter((artist)=>{
+        if(artist.name.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())){
+          return artist;
+        }
+      });
+      setArtists(resultado);
     };
 
     useEffect( ()=>{ 
@@ -30,18 +48,16 @@ export const Artist = () => {
 
 
   return (
-    <>  
-    <h2>Artistas</h2>
-    {artists.map((artist)=>(
-      <div key={artist.id}>   
-      <img src={artist.urlArtist} />   
-      <p>Nombre: {artist.name}</p>
-      <p>Descripcion: {artist.description}</p>
-      <p>Precio: {artist.price}</p>
-      <p>Ubicacion: {artist.location}</p>
-      <p>Dias: {artist.days}</p>
-      <p>Horario: {artist.time}</p>
-      </div>
+    <>
+    <div className="w-2/5 flex flex-row justify-evenly mt-4 mx-auto">  
+    <button className="font-black text-xl">Buscar por nombre</button>
+    <input className="w-60 rounded-md text-gray-700 px-2"
+    value={busqueda}
+    onChange={handleChange}
+    />
+    </div>
+    {artists.map( artist=>(
+      <ArtistDetailContainer key={artist.id} {...artist} />
     ))}
     </>
   );
