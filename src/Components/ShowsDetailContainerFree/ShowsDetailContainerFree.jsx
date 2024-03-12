@@ -1,9 +1,9 @@
 
 
-export const ShowsDetailContainer = ({ id, urlArtist, name, urlPoints, price, location, days, time }) => {
+export const ShowsDetailContainerFree = ({ id, urlArtist, name, urlPoints, price, location, days, time }) => {
     return (
         <>  
-            {price !== "Gratuita" ?
+            {price === "Gratuita" ?
                 <div className="flex flex-row mx-10 mb-8">
                     <div className="flex flex-row items-center">
                         <img className="w-64 h-46" src={urlArtist} alt="" />
@@ -21,4 +21,3 @@ export const ShowsDetailContainer = ({ id, urlArtist, name, urlPoints, price, lo
         </>
     )
 };
-
