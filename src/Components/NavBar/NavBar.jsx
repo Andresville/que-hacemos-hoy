@@ -24,7 +24,9 @@ export const NavBar = () => {
           <NavLink to={'/shows'}>
           <li className="text-sm">Cartelera</li>
           </NavLink>
+          <NavLink to={'/favorites'}>
           <li className="text-sm">Favoritos</li>
+          </NavLink>
         </ul>
       </div>
     </nav>

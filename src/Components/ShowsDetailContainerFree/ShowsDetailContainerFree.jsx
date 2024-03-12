@@ -1,6 +1,17 @@
-
+import { useState } from "react";
+import Favorite from "../../assets/Imagen/Favorite.svg";
+import FavoriteDefault from "../../assets/Imagen/FavoriteDefault.svg";
 
 export const ShowsDetailContainerFree = ({ id, urlArtist, name, urlPoints, price, location, days, time }) => {
+
+    const [isFavorite, setIsFavorite] = useState(localStorage.getItem(`favorite_${id}`) === "true");
+
+    const handleFavoriteClick = () => {
+        setIsFavorite(!isFavorite);
+        localStorage.setItem(`favorite_${id}`, !isFavorite);
+        console.log(isFavorite)
+    };
+
     return (
         <>  
             {price === "Gratuita" ?
@@ -14,10 +25,14 @@ export const ShowsDetailContainerFree = ({ id, urlArtist, name, urlPoints, price
                             <h4>Ubicación: {location}</h4>
                             <h4>Funciones: {days}</h4>
                             <h4>Horario: {time}</h4>
+                            <button onClick={handleFavoriteClick}>
+                                {isFavorite ? <img className="w-5 h-5" src={FavoriteDefault} alt="Favorite" /> 
+                                : <img className="w-5 h-5" src={Favorite} alt="Unfavorite" />}
+                            </button>
                         </div>
                     </div>
                 </div>
-            :<></>}
+            : null}
         </>
     )
 };

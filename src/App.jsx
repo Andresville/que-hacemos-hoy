@@ -7,6 +7,7 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { NavBar } from "./Components/NavBar/NavBar";
 import { Artist } from "./Components/Artist/Artist";
 import { Shows } from "./Components/Shows/Shows";
+import { FavoritesPage } from "./Components/Favorites/Favorites";
 
 
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/artist" element={<Artist />} />
         <Route path="/shows" element={<Shows />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
       </Routes>
       <footer>
       <Footer />
