@@ -21,3 +21,5 @@ export const ShowsDetailContainerFree = ({ id, urlArtist, name, urlPoints, price
         </>
     )
 };
+
+

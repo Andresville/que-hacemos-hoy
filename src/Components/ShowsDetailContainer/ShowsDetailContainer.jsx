@@ -21,4 +21,3 @@ export const ShowsDetailContainer = ({ id, urlArtist, name, urlPoints, price, lo
         </>
     )
 };
-

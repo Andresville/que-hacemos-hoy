@@ -57,19 +57,31 @@ export const Shows = () => {
         <img className="w-5 h-5 absolute ml-2 mt-1" src={Serch} alt="" />
       </div>
 
-      <h3 className="flex justify-center font-black text-3xl my-4 border-b-2 border-[#FAF2F2]">SHOWS GRATUITOS</h3>
-      <div className="grid gap-2 grid-cols-2 grid-rows-1">
-          {artists.map(artist => (
-            <ShowsDetailContainerFree key={artist.id} {...artist} />
-          ))}
-        </div>
-      
-      <h3 className="flex justify-center font-black text-3xl my-4 border-b-2 border-[#FAF2F2]">SHOWS PAGOS</h3>
-      <div className="grid gap-2 grid-cols-2 grid-rows-1">
-        {artists.map(artist => (
-          <ShowsDetailContainer key={artist.id} {...artist} />
-        ))}
-      </div>
+      {artists.length > 0 && (
+        <>
+          {artists.some(artist => artist.price === 'Gratuita') && (
+            <>
+              <h3 className="flex justify-center font-black text-3xl my-4 border-b-2 border-[#FAF2F2]">SHOWS GRATUITOS</h3>
+              <div className="grid gap-2 grid-cols-2 grid-rows-1">
+                {artists.filter(artist => artist.price === 'Gratuita').map(artist => (
+                  <ShowsDetailContainerFree key={artist.id} {...artist} />
+                ))}
+              </div>
+            </>
+          )}
+
+          {artists.some(artist => artist.price !== 'Gratuita') && (
+            <>
+              <h3 className="flex justify-center font-black text-3xl my-4 border-b-2 border-[#FAF2F2]">SHOWS PAGOS</h3>
+              <div className="grid gap-2 grid-cols-2 grid-rows-1">
+                {artists.filter(artist => artist.type !== 'Gratuita').map(artist => (
+                  <ShowsDetailContainer key={artist.id} {...artist} />
+                ))}
+              </div>
+            </>
+          )}
+        </>
+      )}
     </>
   );
 };
