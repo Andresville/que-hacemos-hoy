@@ -31,16 +31,16 @@ export const Carrusel = () => {
         <div className="mt-8 relative w-full overflow-hidden ">
             <div className="flex justify-between items-center">
                 {/* Imagen izquierda */}
-                <div className="absolute left-10 ">
-                    <img src={images[(currentImage - 1 + images.length) % images.length]} alt="Carousel Image" className="w-120 h-64 object-cover opacity-50" />
+                <div className="absolute left-0 md:left-10 ">
+                    <img src={images[(currentImage - 1 + images.length) % images.length]} alt="Carousel Image" className="w-full md:w-120 h-auto md:h-64 object-cover opacity-50" />
                 </div>
                 {/* Imagen central */}
-                <div className="relative z-10">
-                    <img src={images[currentImage]} alt="Carousel Image" className="w-120 h-72 object-cover" style={{ position: "relative", left: "105%", transform: "translateX(-50%)" }} />
+                <div className="relative z-10 flex justify-center w-full">
+                    <img src={images[currentImage]} alt="Carousel Image" className="h-auto md:h-72 object-cover" />
                 </div>
                 {/* Imagen derecha */}
-                <div className="absolute right-10 ">
-                    <img src={images[(currentImage + 1) % images.length]} alt="Carousel Image" className="w-120 h-64 object-cover opacity-50" />
+                <div className="absolute right-0 md:right-10">
+                    <img src={images[(currentImage + 1) % images.length]} alt="Carousel Image" className="w-full md:w-120 h-auto md:h-64 object-cover opacity-50" />
                 </div>
             </div>
         </div>
